@@ -1,0 +1,14 @@
+.IconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  background: transparent;
+  border: 0;
+  color: #765600;
+}
+
+.IconButton:focus {
+  outline: 0;
+}

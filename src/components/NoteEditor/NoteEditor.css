@@ -1,0 +1,23 @@
+.NoteEditor__FormGroup {
+  margin-bottom: 20px;
+}
+
+.NoteEditor__FormGroup__label {
+  display: none;
+}
+
+.NoteEditor__FormGroup__input,
+.NoteEditor__FormGroup__input:focus {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.NoteEditor__FormGroup__input--title {
+  font-weight: bold;
+}
+
+.NoteEditor__FormActions {
+  text-align: right;
+}

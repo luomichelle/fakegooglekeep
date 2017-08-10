@@ -1,5 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  NoteList
+} from './components';
+import 'bootstrap/dist/css/bootstrap.css';
+import './Keep.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -17,8 +23,6 @@ class App extends React.Component {
 
     return (
       <div className="Keep">
-        <OffsetNav toggleClassName='offsetToggle' />
-        {this.renderNavbar()}
         <div className="container">
           <NoteList
             notes={notes}
@@ -31,6 +35,13 @@ class App extends React.Component {
     );
   }
 }
+
+
+
+
+
+
+
 
 App.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.shape({

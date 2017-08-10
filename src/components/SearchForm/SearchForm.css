@@ -1,0 +1,19 @@
+.SearchForm {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 8px);
+  height: 48px;
+  margin-top: 4px;
+  margin-left: 4px;
+  background-color: #fff;
+}
+
+.SearchForm__input {
+  height: 48px;
+  border-radius: 2px;
+  border: 0;
+  outline: 0;
+  padding-left: 15px;
+  flex-grow: 1;
+}

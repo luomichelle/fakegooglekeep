@@ -1,0 +1,22 @@
+.NoteList {
+  margin-top: 20px;
+}
+
+.NoteList__Background {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ccc;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  visibility: hidden;
+  transition: 300ms;
+}
+
+.NoteList__Background--visible {
+  visibility: visible;
+  opacity: 0.7;
+}
