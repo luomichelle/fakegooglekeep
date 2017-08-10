@@ -18,7 +18,6 @@ class Keep extends React.Component {
 
     this.handleEdit = this.handleEdit.bind(this);
     this.handleSave = this.handleSave.bind(this);
-    this.handleSelect = this.handleSelect.bind(this);
   }
   handleEdit(newNote) {
     let notes = this.state.notes.map((oldNote) => {
@@ -51,14 +50,6 @@ class Keep extends React.Component {
     this.setState({
       notes: notes
     });
-  }
-
-  handleSelect(note, value) {
-    if (value) {
-      this.selectOne(note);
-    } else {
-      this.deselectOne(note);
-    }
   }
 
   componentWillMount() {
