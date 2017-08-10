@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import sampleData from './sample-data';
+import Keep from './Keep';
 import registerServiceWorker from './registerServiceWorker';
+import sampleData from './sample-data';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Keep notes={sampleData} />, document.getElementById('root'));
 registerServiceWorker();
