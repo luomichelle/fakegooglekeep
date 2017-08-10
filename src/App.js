@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {
   NoteList
 } from './components';
-import 'bootstrap/dist/css/bootstrap.css';
 import './Keep.css';
 
 
