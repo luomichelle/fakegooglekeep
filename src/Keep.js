@@ -15,8 +15,51 @@ class Keep extends React.Component {
       selectedNotes: 0,
       IsSelectAllClicked: false,
     };
+
+    this.handleEdit = this.handleEdit.bind(this);
+    this.handleSave = this.handleSave.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
+  }
+  handleEdit(newNote) {
+    let notes = this.state.notes.map((oldNote) => {
+      if (newNote.id === oldNote.id) {
+        oldNote.editable = !oldNote.editable;
+      }
+      return oldNote;
+    });
+
+    this.setState({
+      notes: notes
+    });
   }
 
+  handleSave(newNote, mode) {
+    let notes = this.state.notes;
+
+    if (mode === 'update') {
+      notes = notes.map((oldNote) => {
+        if (newNote.id === oldNote.id) {
+          return newNote;
+        }
+        return oldNote;
+      });
+    }
+    else if (mode === 'create') {      
+      notes.unshift(newNote);
+    }
+  
+    this.setState({
+      notes: notes
+    });
+  }
+
+  handleSelect(note, value) {
+    if (value) {
+      this.selectOne(note);
+    } else {
+      this.deselectOne(note);
+    }
+  }
 
   componentWillMount() {
     //render data from global sample-data.js
@@ -31,7 +74,6 @@ class Keep extends React.Component {
     return this.state.notes.filter((note) => {
       let value = this.state.search.replace(/\\/g, '\\\\');
       return note.title.search(value) !== -1 || note.content.search(value) !== -1;
-      console.log("hi")
     });
   }
 
@@ -43,7 +85,7 @@ class Keep extends React.Component {
         <div className="container">
           <NoteList
             notes={notes}
-            onSave={this.handleSave}
+            onSave={this.handleSave} // need bind this data in the constructor + call the function of handleSave
             onEdit={this.handleEdit}
             onSelect={this.handleSelect}
           />
